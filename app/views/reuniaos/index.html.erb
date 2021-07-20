@@ -20,7 +20,7 @@
         
         <% if reuniao.user == current_user %>
         <td><%= link_to 'Editar', edit_reuniao_path(reuniao) %></td>
-        <td><%= link_to 'Excluir', reuniao, method: :delete, remote: true, data: { confirm: 'Voce tem certeza?' } %></td>
+        <td><%= link_to 'Excluir', reuniao, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
 
         <%else%>
         <td></td>
