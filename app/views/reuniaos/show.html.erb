@@ -1,0 +1,18 @@
+
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @reuniao.nome_completo %></h1>
+  <p class="lead"><%= @reuniao.data %></p>
+  <hr class="my-4">
+  <p><%= @reuniao.descricao %></p>
+
+  <%= link_to 'Editar', edit_reuniao_path(@reuniao) %> 
+<%= link_to 'Voltar', reuniaos_path %>
+</div>
+
+
+
+
+
+

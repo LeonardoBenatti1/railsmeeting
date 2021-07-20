@@ -1,0 +1,38 @@
+<%= form_with(model: reuniao) do |form| %>
+  <% if reuniao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reuniao.errors.count, "error") %> prohibited this reuniao from being saved:</h2>
+
+      <ul>
+        <% reuniao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :nome_completo %>
+    <%= form.text_field :nome_completo, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field form-group">
+    <%= form.label :data %>
+    <%= form.datetime_select :data, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field form-group">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao, class:"form-control" %>
+  </div>
+  <br>
+  <div class="field form-group">
+    
+  <%= form.number_field :user_id, id: :reuniao_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

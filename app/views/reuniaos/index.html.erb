@@ -1,0 +1,214 @@
+
+<h1>Lista de Agendamentos</h1>
+<table class="table table-dark table-hover table-striped table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nome completo</th>
+      <th>Data</th>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reuniaos.each do |reuniao| %>
+      <tr>
+        <td><%= reuniao.nome_completo %></td>
+        <td><%= reuniao.data %></td>
+        <td><%= reuniao.descricao %></td>
+        <td><%= link_to 'Detalhes', reuniao %></td>
+        
+        <% if reuniao.user == current_user %>
+        <td><%= link_to 'Editar', edit_reuniao_path(reuniao) %></td>
+        <td><%= link_to 'Excluir', reuniao, method: :delete, remote: true, data: { confirm: 'Voce tem certeza?' } %></td>
+
+        <%else%>
+        <td></td>
+        <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+
+
+</table>
+
+
+
+
+
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Reservar Sala</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                            
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+<div class="container">
+                <div class="timetable-img text-center">
+                    <img src="img/content/timetable.png" alt="">
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center table table-striped">
+                        <thead>
+                            <tr class="bg-light-gray">
+                                <th class="text-uppercase">Horários
+                                </th>
+                                <th class="text-uppercase">Segunda-Feira</th>
+                                <th class="text-uppercase">Terça-Feira</th>
+                                <th class="text-uppercase">Quarta-Feira</th>
+                                <th class="text-uppercase">Quinta-Feira</th>
+                                <th class="text-uppercase">Sexta-Feira</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                           <tr>
+                                <td class="align-middle">07:00</td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+
+                                    
+                                </td>
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                              </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+                                    
+                                </td>
+                               
+                                <td>
+                                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="align-middle">09:00</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+                                <td>
+                                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Disponivel
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">10:00</td>
+                                <td>
+                           
+
+
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                  
+                                <td>
+                                   
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">11:00</td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                  
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">12:00</td>
+                                <td class="bg-light-gray">
+
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td class="bg-light-gray">
+
+                                </td>
+
+                            </tr>
+
+                                
+                        </tbody>
+                    </table>
+                </div>
+            </div>
